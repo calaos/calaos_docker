@@ -22,10 +22,9 @@ cd $build_dir/..
 for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/libstdc++-6.dll \
          $MXE_BIN/bin/libwinpthread-1.dll \
-         $MXE_BIN/bin/libwebp-5.dll \
          $MXE_BIN/bin/zlib1.dll \
-         $MXE_BIN/bin/ssleay32.dll \
-         $MXE_BIN/bin/libeay32.dll \
+         $MXE_BIN/bin/libcrypto-1_1.dll \
+         $MXE_BIN/bin/libssl-1_1.dll \
          $MXE_BIN/bin/icudt56.dll \
          $MXE_BIN/bin/icuin56.dll \
          $MXE_BIN/bin/icuuc56.dll \
@@ -40,6 +39,7 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/qt5/plugins/imageformats \
          $MXE_BIN/qt5/plugins/platforms \
          $MXE_BIN/qt5/plugins/printsupport \
+         $MXE_BIN/qt5/plugins/styles \
          $build_dir/release/calaos_installer.exe \
          $build_mc_dir/release/calaos_machinecreator.exe
 do

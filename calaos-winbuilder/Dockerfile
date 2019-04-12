@@ -20,8 +20,8 @@ RUN mkdir -p "$HOME/.wine/drive_c/Program Files/" && \
 
 #mingw+qt toolchain
 RUN cd $HOME && \
-    wget https://calaos.fr/download/misc/mxe_qt596.tar.xz && \
-    tar xJf mxe_qt596.tar.xz
+    wget https://calaos.fr/download/misc/mxe_qt5121.tar.xz && \
+    tar xJf mxe_qt5121.tar.xz
 
 #codesign
 RUN wget https://github.com/mooltipass/osslsigncode/releases/download/1.7.1/osslsigncode_amd64.tar.xz && \
