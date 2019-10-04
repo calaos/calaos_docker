@@ -57,6 +57,8 @@ RUN cd /build && wget https://github.com/google/googletest/archive/release-1.8.0
     make -j12 install && \
     cd ..
 
+RUN apt-get install -y libmosquitto-dev libmosquittopp-dev
+
 COPY scripts /scripts
 
 COPY start.sh /

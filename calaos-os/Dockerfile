@@ -3,7 +3,7 @@
 # to `latest`! See
 # https://github.com/phusion/baseimage-docker/blob/master/Changelog.md
 # for a list of version numbers.
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.11
 
 MAINTAINER Calaos Team <team@calaos.fr>
 
@@ -19,6 +19,10 @@ RUN dpkg-reconfigure -f noninteractive dash
 RUN apt-get install -y curl git htop unzip vim gawk wget git-core diffstat texinfo \
     gcc-multilib build-essential chrpath libssl-dev bc libncursesw5-dev zsh texinfo \
     libsdl1.2-dev xterm man cpio iputils-ping sudo
+
+RUN yes | unminimize && \
+    apt-get install -y man-db && \
+    rm -r /var/lib/apt/lists/*
 
 RUN apt-get clean && apt-get autoclean
 
@@ -44,6 +48,10 @@ RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
 RUN sed -i -E "s/^plugins=\((.*)\)$/plugins=(\1 git extract)/" ~/.zshrc
 
 RUN git clone https://github.com/calaos/calaos-os
+
+#RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+#ENV LANG en_US.UTF-8
+#ENV LC_ALL en_US.UTF-8
 
 USER root
 WORKDIR /root
