@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# inspired by http://stackoverflow.com/a/10407912
+
+COUNT=0
+echo "Start waiting on $@"
+while pgrep -u xclient "$@" > /dev/null; do 
+		echo "waiting ..."
+		sleep 1; 
+		COUNT=$((COUNT+1))
+		if [ $COUNT -eq 60 ]; then
+			exit 3;
+		fi
+done
+echo "$@ completed"

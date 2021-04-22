@@ -2,8 +2,8 @@
 
 set -ev
 
-PATH=$HOME/mxe/usr/bin:$PATH
-MXE_BASE=$HOME/mxe
+PATH=/mxe/usr/bin:$PATH
+MXE_BASE=/mxe
 build_dir=/calaos_installer/build_win
 build_mc_dir=/calaos_installer/build_win/mc
 

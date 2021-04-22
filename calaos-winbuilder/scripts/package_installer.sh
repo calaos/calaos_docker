@@ -7,7 +7,7 @@ source $SCRIPTDIR/funcs.sh
 
 build_dir=/calaos_installer/build_win
 build_mc_dir=/calaos_installer/build_win/mc
-MXE_BIN=$HOME/mxe/usr/i686-w64-mingw32.shared.posix
+MXE_BIN=/mxe/usr/i686-w64-mingw32.shared.posix
 WDIR=$HOME/.wine/drive_c/calaos_installer_build
 PKDIR=/calaos_installer/packages
 mkdir -p $PKDIR
@@ -25,9 +25,13 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/zlib1.dll \
          $MXE_BIN/bin/libcrypto-1_1.dll \
          $MXE_BIN/bin/libssl-1_1.dll \
-         $MXE_BIN/bin/icudt56.dll \
-         $MXE_BIN/bin/icuin56.dll \
-         $MXE_BIN/bin/icuuc56.dll \
+         $MXE_BIN/bin/icudt66.dll \
+         $MXE_BIN/bin/icuin66.dll \
+         $MXE_BIN/bin/icuuc66.dll \
+         $MXE_BIN/bin/libzstd.dll \
+         $MXE_BIN/bin/liblzma-5.dll \
+         $MXE_BIN/bin/libbz2.dll \
+         $MXE_BIN/bin/libKF5Archive.dll \
          $MXE_BIN/qt5/bin/Qt5Core.dll \
          $MXE_BIN/qt5/bin/Qt5Gui.dll \
          $MXE_BIN/qt5/bin/Qt5Network.dll \
@@ -46,16 +50,13 @@ do
     cp -R $f $WDIR
 done
 
-find_and_sign $WDIR
-
 pushd win32
 
 echo "#define MyAppVersion \"$VERSION\"" > build.iss
 cat installer.iss >> build.iss
 chmod +x iscc
-./iscc build.iss
+iscc build.iss
 
-sign_binary build/$FILENAME.exe
 mv build/$FILENAME.exe $PKDIR
 
 popd
