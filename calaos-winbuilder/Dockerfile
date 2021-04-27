@@ -119,7 +119,6 @@ RUN cd "/home/xclient/.wine/drive_c/Program Files/Inno Setup 6/Languages" && \
 #Use multi-stage to not keep builds deps and file into the final image to reduce size
 FROM ubuntu:20.04
 
-COPY etc/apt-no-cache /etc/apt/apt.conf.d/02nocache
 COPY etc/no-man /etc/dpkg/dpkg.cfg.d/01_nodoc
 
 COPY --from=intermediate_builder /mxe/usr /mxe/usr
@@ -159,7 +158,7 @@ RUN apt update && \
     DEBIAN_FRONTEND="noninteractive" apt install -y \
         make zip unzip wget xz-utils git bzip2 bash curl python sudo
 
-RUN rm -fr /*.deb
+RUN sh -c "rm -fr /*.deb"
 
 # Wine really doesn't like to be run as root, so let's use a non-root user
 # iscc must be started with sudo
@@ -167,6 +166,9 @@ RUN mkdir /work && \
     chown -R xclient:xusers /work
 
 RUN echo "xclient ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Clean up APT when done.
+RUN apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER xclient
 ENV HOME /home/xclient

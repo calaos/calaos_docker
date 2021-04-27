@@ -54,7 +54,6 @@ pushd win32
 
 echo "#define MyAppVersion \"$VERSION\"" > build.iss
 cat installer.iss >> build.iss
-chmod +x iscc
 iscc build.iss
 
 mv build/$FILENAME.exe $PKDIR
