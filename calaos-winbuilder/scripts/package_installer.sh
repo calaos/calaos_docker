@@ -25,25 +25,25 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/zlib1.dll \
          $MXE_BIN/bin/libcrypto-1_1.dll \
          $MXE_BIN/bin/libssl-1_1.dll \
-         $MXE_BIN/bin/icudt66.dll \
-         $MXE_BIN/bin/icuin66.dll \
-         $MXE_BIN/bin/icuuc66.dll \
+         $MXE_BIN/bin/icudt70.dll \
+         $MXE_BIN/bin/icuin70.dll \
+         $MXE_BIN/bin/icuuc70.dll \
          $MXE_BIN/bin/libzstd.dll \
          $MXE_BIN/bin/liblzma-5.dll \
          $MXE_BIN/bin/libbz2.dll \
          $MXE_BIN/bin/libKF5Archive.dll \
-         $MXE_BIN/qt5/bin/Qt5Core.dll \
-         $MXE_BIN/qt5/bin/Qt5Gui.dll \
-         $MXE_BIN/qt5/bin/Qt5Network.dll \
-         $MXE_BIN/qt5/bin/Qt5Widgets.dll \
-         $MXE_BIN/qt5/bin/Qt5WebSockets.dll \
-         $MXE_BIN/qt5/bin/Qt5Xml.dll \
-         $MXE_BIN/qt5/bin/Qt5XmlPatterns.dll \
-         $MXE_BIN/qt5/bin/Qt5PrintSupport.dll \
-         $MXE_BIN/qt5/plugins/imageformats \
-         $MXE_BIN/qt5/plugins/platforms \
-         $MXE_BIN/qt5/plugins/printsupport \
-         $MXE_BIN/qt5/plugins/styles \
+         $MXE_BIN/qt6/bin/Qt6Core.dll \
+         $MXE_BIN/qt6/bin/Qt6Gui.dll \
+         $MXE_BIN/qt6/bin/Qt6Network.dll \
+         $MXE_BIN/qt6/bin/Qt6Widgets.dll \
+         $MXE_BIN/qt6/bin/Qt6WebSockets.dll \
+         $MXE_BIN/qt6/bin/Qt6Xml.dll \
+         $MXE_BIN/qt6/bin/Qt6XmlPatterns.dll \
+         $MXE_BIN/qt6/bin/Qt6PrintSupport.dll \
+         $MXE_BIN/qt6/plugins/imageformats \
+         $MXE_BIN/qt6/plugins/platforms \
+         $MXE_BIN/qt6/plugins/printsupport \
+         $MXE_BIN/qt6/plugins/styles \
          $build_dir/release/calaos_installer.exe \
          $build_mc_dir/release/calaos_machinecreator.exe
 do
