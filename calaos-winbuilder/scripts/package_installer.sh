@@ -23,14 +23,16 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/libstdc++-6.dll \
          $MXE_BIN/bin/libwinpthread-1.dll \
          $MXE_BIN/bin/zlib1.dll \
-         $MXE_BIN/bin/libcrypto-1_1.dll \
-         $MXE_BIN/bin/libssl-1_1.dll \
-         $MXE_BIN/bin/icudt70.dll \
-         $MXE_BIN/bin/icuin70.dll \
-         $MXE_BIN/bin/icuuc70.dll \
+         $MXE_BIN/bin/libcrypto-3.dll \
+         $MXE_BIN/bin/libssl-3.dll \
+         $MXE_BIN/bin/icudt71.dll \
+         $MXE_BIN/bin/icuin71.dll \
+         $MXE_BIN/bin/icuuc71.dll \
          $MXE_BIN/bin/libzstd.dll \
          $MXE_BIN/bin/liblzma-5.dll \
          $MXE_BIN/bin/libbz2.dll \
+         $MXE_BIN/bin/libpng16-16.dll \
+         $MXE_BIN/bin/libjpeg-9.dll \
          $MXE_BIN/bin/libKF5Archive.dll \
          $MXE_BIN/qt6/bin/Qt6Core.dll \
          $MXE_BIN/qt6/bin/Qt6Gui.dll \
@@ -38,12 +40,11 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/qt6/bin/Qt6Widgets.dll \
          $MXE_BIN/qt6/bin/Qt6WebSockets.dll \
          $MXE_BIN/qt6/bin/Qt6Xml.dll \
-         $MXE_BIN/qt6/bin/Qt6XmlPatterns.dll \
          $MXE_BIN/qt6/bin/Qt6PrintSupport.dll \
          $MXE_BIN/qt6/plugins/imageformats \
          $MXE_BIN/qt6/plugins/platforms \
-         $MXE_BIN/qt6/plugins/printsupport \
          $MXE_BIN/qt6/plugins/styles \
+         $MXE_BIN/qt6/plugins/tls \
          $build_dir/release/calaos_installer.exe \
          $build_mc_dir/release/calaos_machinecreator.exe
 do
