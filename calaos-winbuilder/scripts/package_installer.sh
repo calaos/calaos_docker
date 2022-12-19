@@ -33,6 +33,9 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/libbz2.dll \
          $MXE_BIN/bin/libpng16-16.dll \
          $MXE_BIN/bin/libjpeg-9.dll \
+         $MXE_BIN/bin/libfreetype-6.dll \
+         $MXE_BIN/bin/libbrotlidec.dll \
+         $MXE_BIN/bin/libbrotlicommon.dll \
          $MXE_BIN/bin/libKF5Archive.dll \
          $MXE_BIN/qt6/bin/Qt6Core.dll \
          $MXE_BIN/qt6/bin/Qt6Gui.dll \
@@ -41,6 +44,7 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/qt6/bin/Qt6WebSockets.dll \
          $MXE_BIN/qt6/bin/Qt6Xml.dll \
          $MXE_BIN/qt6/bin/Qt6PrintSupport.dll \
+         $MXE_BIN/qt6/bin/Qt6Core5Compat.dll \
          $MXE_BIN/qt6/plugins/imageformats \
          $MXE_BIN/qt6/plugins/platforms \
          $MXE_BIN/qt6/plugins/styles \
