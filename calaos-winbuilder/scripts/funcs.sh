@@ -106,4 +106,18 @@ function endsWith()
     case $2 in *"$1") true;; *) false;; esac;
 }
 
+function upload_file()
+{
+    FNAME=$1
+    HASH=$2
+    INSTALLPATH=$3
+
+    curl -X POST \
+        -H "Content-Type: multipart/form-data" \
+        -F "upload_key=$UPLOAD_KEY" \
+        -F "upload_folder=$INSTALLPATH" \
+        -F "upload_sha256=$HASH" \
+        -F "upload_file=@$FNAME" \
+        https://calaos.fr/download/upload
+}
 
