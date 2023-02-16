@@ -38,9 +38,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /build/*
 
 FROM debian:stable-slim as runner
 
-RUN apt-get update -qq && \
-    apt-get install -y knxd libuv1 libsigc++-2.0 libjansson libcurl4-openssl \
-        libluajit-5.1 libsqlite3 libusb libow imagemagick libev unzip wip libusb-1.0.0 \
-        knxd libmosquitto libmosquittopp libuv1
+# RUN apt-get update -qq && \
+#     apt-get install -y knxd libuv1 libsigc++-2.0 libjansson libcurl4-openssl \
+#         libluajit-5.1 libsqlite3 libusb libow imagemagick libev unzip wip libusb-1.0.0 \
+#         knxd libmosquitto libmosquittopp libuv1
 
 COPY --from=builder /opt /opt
