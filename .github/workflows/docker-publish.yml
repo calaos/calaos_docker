@@ -45,8 +45,8 @@ jobs:
           context: calaos_base
           # Note: tags has to be all lower-case
           tags: |
-            calaos/calaos/calaos_docker/calaos_base:latest 
-            ghcr.io/calaos/calaos_docker/calaos_base:latest
+            ghcr.io/calaos/calaos_docker/calaos_base:latest 
+            ghcr.io/calaos/calaos_docker/calaos_base:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Image digest
