@@ -44,8 +44,9 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: calaos_base
           # Note: tags has to be all lower-case
-          tags: ${{ steps.meta.outputs.tags }}
-          # build on feature branches, push only on master branch
+          tags: |
+            calaos/calaos/calaos_docker/calaos_base:latest 
+            ghcr.io/calaos/calaos_docker/calaos_base:latest
           push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Image digest
