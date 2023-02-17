@@ -3,7 +3,7 @@ name: Build and Publish
 on:
   # run it on push to the default repository branch
   push:
-    branches: [main]
+    branches: [master]
   # run it during pull request
   pull_request:
 
@@ -45,7 +45,7 @@ jobs:
           context: calaos_base
           # Note: tags has to be all lower-case
           tags: ${{ steps.meta.outputs.tags }}
-          # build on feature branches, push only on main branch
+          # build on feature branches, push only on master branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Image digest
