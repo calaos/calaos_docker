@@ -50,6 +50,7 @@ jobs:
             ghcr.io/calaos/calaos_docker/calaos_base:latest 
             ghcr.io/calaos/calaos_docker/calaos_base:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/master' }}
+          platforms: linux/amd64,linux/arm64
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
