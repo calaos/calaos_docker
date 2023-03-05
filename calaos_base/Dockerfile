@@ -43,6 +43,6 @@ RUN apt -y update && \
     apt -y upgrade && \
     apt-get install -yq --no-install-recommends libuv1 wget libsigc++-2.0-0v5 libjansson4 \
         libluajit-5.1 libsqlite3-0 libusb-1.0 imagemagick libow-3.2 libev4 unzip zip knxd \
-        libmosquitto1 libmosquittopp1
+        libmosquitto1 libmosquittopp1 libowcapi-3.2 libcurl4 libprotobuf23
 
 COPY --from=builder /opt/ /opt/
