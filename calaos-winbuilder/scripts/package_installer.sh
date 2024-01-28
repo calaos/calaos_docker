@@ -25,9 +25,9 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/bin/zlib1.dll \
          $MXE_BIN/bin/libcrypto-3.dll \
          $MXE_BIN/bin/libssl-3.dll \
-         $MXE_BIN/bin/icudt71.dll \
-         $MXE_BIN/bin/icuin71.dll \
-         $MXE_BIN/bin/icuuc71.dll \
+         $MXE_BIN/bin/icudt74.dll \
+         $MXE_BIN/bin/icuin74.dll \
+         $MXE_BIN/bin/icuuc74.dll \
          $MXE_BIN/bin/libzstd.dll \
          $MXE_BIN/bin/liblzma-5.dll \
          $MXE_BIN/bin/libbz2.dll \
@@ -45,6 +45,7 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/qt6/bin/Qt6Xml.dll \
          $MXE_BIN/qt6/bin/Qt6PrintSupport.dll \
          $MXE_BIN/qt6/bin/Qt6Core5Compat.dll \
+         $MXE_BIN/qt6/bin/Qt6Mqtt.dll \
          $MXE_BIN/qt6/plugins/imageformats \
          $MXE_BIN/qt6/plugins/platforms \
          $MXE_BIN/qt6/plugins/styles \
