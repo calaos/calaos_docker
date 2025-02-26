@@ -6,6 +6,7 @@ SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $SCRIPTDIR/funcs.sh
 
 upload_token=$1
+reltype=$2
 
 PKDIR=/calaos_installer/packages
 mkdir -p $PKDIR
@@ -16,9 +17,14 @@ then
     exit 1
 fi
 
+if [ -z "$reltype" ]
+then
+    reltype="experimental"
+fi
+
 export UPLOAD_KEY=$upload_token
 
 cd /calaos_installer
 
-upload_file $PKDIR/*.exe $(sha256sum $PKDIR/*.exe | cut -d' ' -f1) "experimental/calaos_installer/windows"
+upload_file $PKDIR/*.exe $(sha256sum $PKDIR/*.exe | cut -d' ' -f1) "$reltype/calaos_installer/windows"
 
