@@ -5,42 +5,36 @@ on:
 
 jobs:
   build-and-push-winbuilder:
-    name: Build winbuilder Docker image and push to Docker Hub
+    name: Build winbuilder Docker image and push to GHCR
     runs-on: ubuntu-latest
+
     permissions:
       contents: read
       packages: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Login to Github Packages
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build image and push to Docker Hub
+      - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v6
         with:
           context: calaos-winbuilder
           tags: |
-            ghcr.io/calaos/calaos_docker/winbuilder:latest
-            ghcr.io/calaos/calaos_docker/winbuilder:${{ github.sha }}
+            ghcr.io/calaos/winbuilder:latest
+            ghcr.io/calaos/winbuilder:${{ github.sha }}
           push: true
 
       - name: Image digest
