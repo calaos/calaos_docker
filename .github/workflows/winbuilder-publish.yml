@@ -1,0 +1,38 @@
+name: Build and Publish winbuilder
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-push-winbuilder:
+    name: Build winbuilder Docker image and push to Docker Hub
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build image and push to Docker Hub
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: calaos-winbuilder
+          tags: |
+            calaos/winbuilder:latest
+            calaos/winbuilder:${{ github.sha }}
+          push: true
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
