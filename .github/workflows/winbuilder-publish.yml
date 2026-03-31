@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
 
     steps:
       - name: Checkout code
@@ -38,8 +39,8 @@ jobs:
         with:
           context: calaos-winbuilder
           tags: |
-            ghcr.io/calaos/winbuilder:latest
-            ghcr.io/calaos/winbuilder:${{ github.sha }}
+            ghcr.io/calaos/calaos_docker/winbuilder:latest
+            ghcr.io/calaos/calaos_docker/winbuilder:${{ github.sha }}
           push: true
 
       - name: Image digest
