@@ -38,8 +38,8 @@ jobs:
         with:
           context: calaos-winbuilder
           tags: |
-            ghcr.io/calaos/calaos/winbuilder:latest
-            ghcr.io/calaos/calaos/winbuilder:${{ github.sha }}
+            ghcr.io/calaos/calaos_docker/winbuilder:latest
+            ghcr.io/calaos/calaos_docker/winbuilder:${{ github.sha }}
           push: true
 
       - name: Image digest
