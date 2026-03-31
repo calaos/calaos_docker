@@ -46,10 +46,17 @@ for f in $MXE_BIN/bin/libgcc_s_sjlj-1.dll \
          $MXE_BIN/qt6/bin/Qt6PrintSupport.dll \
          $MXE_BIN/qt6/bin/Qt6Core5Compat.dll \
          $MXE_BIN/qt6/bin/Qt6Mqtt.dll \
+         $MXE_BIN/qt6/bin/Qt6Quick.dll \
+         $MXE_BIN/qt6/bin/Qt6Qml.dll \
+         $MXE_BIN/qt6/bin/Qt6QuickControls2.dll \
+         $MXE_BIN/qt6/bin/Qt6QuickWidgets.dll \
          $MXE_BIN/qt6/plugins/imageformats \
          $MXE_BIN/qt6/plugins/platforms \
          $MXE_BIN/qt6/plugins/styles \
          $MXE_BIN/qt6/plugins/tls \
+         $MXE_BIN/qt6/qml/QML  \
+	     $MXE_BIN/qt6/qml/QtCore \
+	     $MXE_BIN/qt6/qml/QtQuick \
          $build_dir/release/calaos_installer.exe \
          $build_mc_dir/release/calaos_machinecreator.exe
 do
